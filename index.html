@@ -1,121 +1,1219 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="dilerim-ki — GitHub Pages için hazırlanan modern açılış sayfası."
-    />
-    <title>dilerim-ki</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav">
-        <div class="brand">dilerim-ki</div>
-        <nav class="nav-links" aria-label="Ana menü">
-          <a href="#hakkinda">Hakkında</a>
-          <a href="#ozellikler">Özellikler</a>
-          <a href="#iletisim">İletişim</a>
-        </nav>
-      </div>
-    </header>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <main>
-      <section class="hero">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <span class="eyebrow">Modern web sayfası</span>
-            <h1>İstediğin her şeyi açık ve net bir şekilde sun.</h1>
-            <p>
-              dilerim-ki, kişisel veya proje odaklı içeriklerin için hazır,
-              hızlı ve mobil uyumlu bir açılış sayfası.
-            </p>
-            <div class="cta-row">
-              <a class="button primary" href="#ozellikler">Keşfet</a>
-              <a class="button secondary" href="#iletisim">İletişime Geç</a>
-            </div>
-          </div>
-          <div class="hero-card" aria-label="Örnek kart">
-            <div class="card-top">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <div class="mini-panel">
-              <div class="mini-row">
-                <span class="label">Durum</span>
-                <span class="status online">Aktif</span>
-              </div>
-              <div class="mini-row">
-                <span class="label">Proje</span>
-                <span class="value">dilerim-ki</span>
-              </div>
-              <div class="mini-row">
-                <span class="label">Platform</span>
-                <span class="value">GitHub Pages</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<title>Dilerim Ki</title>
 
-      <section id="hakkinda" class="section">
-        <div class="container two-col">
-          <div>
-            <span class="section-tag">Hakkında</span>
-            <h2>Temiz tasarım, güçlü görünüm.</h2>
-          </div>
-          <p>
-            Bu sayfa, GitHub Pages ile kolayca yayımlanacak şekilde hazırlanmıştır.
-            Kolay düzenlenebilir yapısı sayesinde hızlıca kişisel marka, proje ve
-            başvuru sayfası olarak kullanılabilir.
-          </p>
-        </div>
-      </section>
+<style>
 
-      <section id="ozellikler" class="section alt-bg">
-        <div class="container">
-          <span class="section-tag">Özellikler</span>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Hızlı</h3>
-              <p>Yüksek performans ve hafif yapısal tasarım.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Mobil Uyumlu</h3>
-              <p>Cep telefonu ve masaüstü ekranlarda sorunsuz görünüm.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Kolay Yönetim</h3>
-              <p>İstediğin bölümleri tek dosya üzerinden kolayca güncelle.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+/* =========================================================
+   RESET
+========================================================= */
 
-      <section id="iletisim" class="section cta-section">
-        <div class="container cta-box">
-          <div>
-            <span class="section-tag">İletişim</span>
-            <h2>İstediğin sonuca ulaşmak için hazırız.</h2>
-          </div>
-          <a class="button primary" href="mailto:hello@example.com">Bana Ulaş</a>
-        </div>
-      </section>
-    </main>
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+}
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© 2026 dilerim-ki</p>
-      </div>
-    </footer>
-  </body>
-</html>
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #020203;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    touch-action: manipulation;
+}
+
+/* =========================================================
+   GRAIN
+========================================================= */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: .075;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* =========================================================
+   APP
+========================================================= */
+
+#app {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+}
+
+/* =========================================================
+   SCENES
+========================================================= */
+
+.scene {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 1s cubic-bezier(.22,1,.36,1),
+        transform 1.2s cubic-bezier(.22,1,.36,1);
+
+    transform: scale(1.035);
+
+    overflow: hidden;
+}
+
+.scene.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.scene.exit {
+    opacity: 0;
+    transform: scale(.97);
+}
+
+.scene-content {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* =========================================================
+   CINEMATIC TRANSITION
+========================================================= */
+
+#transition {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 9997;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity .65s ease;
+}
+
+#transition.active {
+    opacity: 1;
+}
+
+/* =========================================================
+   SCENE UI
+========================================================= */
+
+.scene-number {
+    position: absolute;
+    top: 28px;
+    left: 30px;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,.3);
+}
+
+.scene-counter {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+
+    font-family: monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,.3);
+}
+
+.tap-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 8px;
+    letter-spacing: 5px;
+
+    color: rgba(255,255,255,.38);
+
+    animation: hintPulse 2.2s infinite;
+}
+
+.tap-hint::after {
+    content: "";
+    display: block;
+
+    width: 30px;
+    height: 1px;
+
+    margin: 9px auto 0;
+
+    background: rgba(255,255,255,.3);
+
+    animation: linePulse 2.2s infinite;
+}
+
+@keyframes hintPulse {
+    0%,100% { opacity: .25; }
+    50% { opacity: .8; }
+}
+
+@keyframes linePulse {
+    0%,100% { width: 18px; }
+    50% { width: 38px; }
+}
+
+/* =========================================================
+   SCENE 01
+========================================================= */
+
+#scene1 {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.035),
+            transparent 45%
+        ),
+        #000;
+}
+
+.studio {
+    font-size: 9px;
+    letter-spacing: 6px;
+    color: rgba(255,255,255,.35);
+    margin-bottom: 30px;
+}
+
+.main-title {
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 15vw, 130px);
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin: 0;
+
+    text-shadow:
+        0 0 60px rgba(255,255,255,.08);
+}
+
+.release {
+    margin-top: 28px;
+    font-size: 10px;
+    letter-spacing: 7px;
+    color: rgba(255,255,255,.42);
+}
+
+/* =========================================================
+   SCENE 02
+========================================================= */
+
+#scene2 {
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(100,130,180,.08),
+            transparent 42%
+        ),
+        #030405;
+}
+
+.chapter {
+    font-size: 9px;
+    letter-spacing: 6px;
+    color: rgba(255,255,255,.3);
+    margin-bottom: 28px;
+}
+
+.scene-title {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 10vw, 90px);
+    font-weight: 400;
+    margin: 0 0 20px;
+}
+
+.scene-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,.55);
+}
+
+/* =========================================================
+   REALISTIC WATER BOTTLE
+========================================================= */
+
+.bottle-wrap {
+    position: relative;
+    width: 150px;
+    height: 390px;
+
+    margin: 20px auto 35px;
+
+    filter:
+        drop-shadow(0 30px 40px rgba(0,0,0,.6));
+}
+
+.bottle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 125px;
+    height: 320px;
+
+    border-radius:
+        34px 34px 25px 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.35),
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.03)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.27);
+
+    box-shadow:
+        inset 8px 0 12px rgba(255,255,255,.08),
+        inset -8px 0 14px rgba(0,0,0,.15),
+        0 0 25px rgba(160,200,255,.05);
+
+    overflow: hidden;
+
+    transition:
+        transform .8s cubic-bezier(.22,1,.36,1);
+}
+
+.bottle.shake {
+    animation: bottleShake .8s ease;
+}
+
+@keyframes bottleShake {
+    0% { transform: translateX(-50%) rotate(0); }
+    20% { transform: translateX(-50%) rotate(-2deg); }
+    40% { transform: translateX(-50%) rotate(2deg); }
+    60% { transform: translateX(-50%) rotate(-1.5deg); }
+    80% { transform: translateX(-50%) rotate(1deg); }
+    100% { transform: translateX(-50%) rotate(0); }
+}
+
+.bottle-neck {
+    position: absolute;
+    top: -48px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 57px;
+    height: 65px;
+
+    border-radius: 9px 9px 4px 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.35),
+            rgba(255,255,255,.08)
+        );
+
+    border: 1px solid rgba(255,255,255,.25);
+}
+
+.cap {
+    position: absolute;
+
+    top: -69px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 62px;
+    height: 27px;
+
+    border-radius: 5px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #4d5660 0 4px,
+            #68727c 4px 6px
+        );
+
+    box-shadow:
+        inset 0 2px 3px rgba(255,255,255,.15);
+}
+
+.water {
+    position: absolute;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+
+    height: 76%;
+
+    border-radius:
+        0 0 22px 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(70,140,190,.13),
+            rgba(180,230,255,.25),
+            rgba(55,120,180,.12)
+        );
+
+    overflow: hidden;
+}
+
+.water::before,
+.water::after {
+    content: "";
+    position: absolute;
+
+    left: -20%;
+    width: 140%;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(220,245,255,.17);
+
+    animation: waterMove 3.5s infinite ease-in-out;
+}
+
+.water::before {
+    top: -18px;
+}
+
+.water::after {
+    top: -12px;
+    opacity: .4;
+    animation-delay: -1.5s;
+}
+
+@keyframes waterMove {
+    0%,100% {
+        transform: translateX(-8%) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateX(8%) rotate(2deg);
+    }
+}
+
+.bottle-shine {
+    position: absolute;
+
+    top: 15px;
+    left: 20px;
+
+    width: 18px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    filter: blur(4px);
+
+    animation: shineMove 4s infinite;
+}
+
+@keyframes shineMove {
+    0% {
+        transform: translateX(-15px);
+        opacity: .2;
+    }
+
+    50% {
+        transform: translateX(35px);
+        opacity: .65;
+    }
+
+    100% {
+        transform: translateX(-15px);
+        opacity: .2;
+    }
+}
+
+.bottle-label {
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+    top: 135px;
+
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        rgba(235,235,230,.86);
+
+    color: #222;
+
+    font-family: Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.15);
+}
+
+/* =========================================================
+   SCENE 03
+========================================================= */
+
+#scene3 {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.025),
+            transparent 50%
+        ),
+        #030405;
+}
+
+.dialogue {
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 9vw, 75px);
+    margin: 20px 0;
+}
+
+.dialogue-small {
+    color: rgba(255,255,255,.35);
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+/* =========================================================
+   SCENE 04 TURNSTILE
+========================================================= */
+
+#scene4 {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(20,35,45,.4),
+            transparent 55%
+        ),
+        #020506;
+}
+
+.turnstile {
+    width: min(420px, 90vw);
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #11171b,
+            #06090b
+        );
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.7),
+        inset 0 1px rgba(255,255,255,.04);
+}
+
+.turnstile-header {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: #68737a;
+
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.turnstile-screen {
+    position: relative;
+
+    margin: 25px 0;
+
+    height: 210px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60,100,110,.12),
+            transparent 65%
+        );
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    overflow: hidden;
+}
+
+.screen-status {
+    font-family: monospace;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    color: #87939a;
+
+    margin-bottom: 25px;
+}
+
+.person-name {
+    font-size: 18px;
+    letter-spacing: 4px;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition: .8s;
+}
+
+.person-name.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* fingerprint */
+
+.fingerprint-area {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.fingerprint {
+    width: 64px;
+    height: 75px;
+
+    position: relative;
+
+    opacity: .65;
+
+    transition:
+        filter .4s,
+        transform .4s;
+}
+
+.fingerprint::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 48% 48% 45% 45%;
+
+    background:
+        repeating-radial-gradient(
+            ellipse at center,
+            transparent 0 4px,
+            rgba(170,190,195,.8) 5px 6px,
+            transparent 7px 10px
+        );
+
+    transform: rotate(-8deg);
+}
+
+.fingerprint::after {
+    content: "";
+
+    position: absolute;
+
+    left: 27px;
+    top: 18px;
+
+    width: 13px;
+    height: 40px;
+
+    border-left: 2px solid rgba(170,190,195,.8);
+    border-radius: 50%;
+
+    transform: rotate(-10deg);
+}
+
+.fingerprint.scanning {
+    filter:
+        drop-shadow(0 0 12px #53ff91);
+
+    transform: scale(1.08);
+}
+
+.fingerprint-ring {
+    position: absolute;
+
+    inset: 0;
+
+    border: 1px solid transparent;
+
+    border-radius: 50%;
+
+    opacity: 0;
+}
+
+.fingerprint-ring.active {
+    animation: scanRing 1.2s ease forwards;
+}
+
+@keyframes scanRing {
+    0% {
+        opacity: 1;
+        transform: scale(.75);
+        border-color: #50ff8a;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+        border-color: #50ff8a;
+    }
+}
+
+.scan-line {
+    position: absolute;
+
+    left: 15%;
+    right: 15%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #55ff91,
+            transparent
+        );
+
+    opacity: 0;
+
+    box-shadow:
+        0 0 12px #55ff91;
+}
+
+.scan-line.active {
+    animation: scanLine 1.1s ease-in-out;
+}
+
+@keyframes scanLine {
+    0% {
+        top: 25%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 75%;
+        opacity: 0;
+    }
+}
+
+.turnstile-hint {
+    text-align: center;
+
+    font-family: monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #526068;
+}
+
+/* =========================================================
+   EASTER EGG
+========================================================= */
+
+.easter-egg {
+    position: absolute;
+
+    bottom: 9px;
+    right: 12px;
+
+    font-family: monospace;
+
+    font-size: 6px;
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,.08);
+
+    cursor: pointer;
+
+    transition: .5s;
+}
+
+.easter-egg:hover {
+    color: rgba(255,255,255,.5);
+}
+
+.easter-message {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    width: min(340px, 82vw);
+
+    transform:
+        translate(-50%,-50%)
+        scale(.92);
+
+    padding: 25px;
+
+    background:
+        rgba(3,6,7,.96);
+
+    border:
+        1px solid rgba(80,255,145,.3);
+
+    box-shadow:
+        0 0 60px rgba(40,255,120,.08);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: .6s;
+
+    z-index: 500;
+}
+
+.easter-message.show {
+    opacity: 1;
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+}
+
+.easter-message .system {
+    color: #54ff91;
+    font-family: monospace;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.easter-message p {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.8);
+}
+
+/* =========================================================
+   SCENE 05
+========================================================= */
+
+#scene5 {
+    background: #000;
+}
+
+.story-big {
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 8vw, 75px);
+    line-height: 1.25;
+}
+
+.story-small {
+    margin-top: 30px;
+
+    color: rgba(255,255,255,.35);
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   RAMADAN / ONE MONTH
+========================================================= */
+
+#scene6 {
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(100,120,170,.1),
+            transparent 25%
+        ),
+        linear-gradient(
+            to bottom,
+            #05070b,
+            #020304
+        );
+}
+
+.moon {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    right: 15%;
+    top: 15%;
+
+    background: #eeeede;
+
+    box-shadow:
+        0 0 80px rgba(255,255,220,.12);
+}
+
+.month-title {
+    font-size: clamp(40px, 11vw, 100px);
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    margin: 0;
+}
+
+.month-sub {
+    margin-top: 25px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,.35);
+}
+
+/* =========================================================
+   22:00
+========================================================= */
+
+#scene7 {
+    background:
+        linear-gradient(
+            to bottom,
+            #020305,
+            #080b12
+        );
+}
+
+.time {
+    font-family: monospace;
+
+    font-size: clamp(70px, 20vw, 160px);
+
+    letter-spacing: 8px;
+
+    text-shadow:
+        0 0 50px rgba(255,255,255,.1);
+}
+
+.time-caption {
+    margin-top: 15px;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: rgba(255,255,255,.35);
+}
+
+/* =========================================================
+   WALK
+========================================================= */
+
+#scene8 {
+    background:
+        linear-gradient(
+            to bottom,
+            #020305 0%,
+            #080c15 55%,
+            #020304 100%
+        );
+}
+
+.walk-moon {
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    top: 13%;
+    right: 15%;
+
+    background: #e9e8dc;
+
+    box-shadow:
+        0 0 60px rgba(255,255,220,.13);
+}
+
+.road {
+    position: absolute;
+
+    bottom: -10%;
+    left: 50%;
+
+    width: 65%;
+    height: 75%;
+
+    transform:
+        translateX(-50%)
+        perspective(300px)
+        rotateX(12deg);
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0 45px,
+            rgba(255,255,255,.12) 46px 49px,
+            transparent 50px 90px
+        );
+}
+
+.road::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 2px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,.35) 0 30px,
+            transparent 30px 70px
+        );
+}
+
+.distance {
+    position: absolute;
+
+    top: 25%;
+    left: 12%;
+
+    font-family: monospace;
+
+    color: rgba(255,255,255,.6);
+}
+
+.distance strong {
+    display: block;
+
+    font-size: 25px;
+
+    letter-spacing: 3px;
+}
+
+.distance small {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: rgba(255,255,255,.3);
+}
+
+/* person */
+
+.walker {
+    position: absolute;
+
+    left: 50%;
+    bottom: 18%;
+
+    width: 24px;
+    height: 90px;
+
+    transform: translateX(-50%);
+
+    animation: walkerMove 1.2s infinite;
+}
+
+.walker-head {
+    width: 17px;
+    height: 17px;
+
+    border-radius: 50%;
+
+    background: #020202;
+
+    margin: auto;
+}
+
+.walker-body {
+    width: 12px;
+    height: 40px;
+
+    background: #020202;
+
+    margin: 3px auto;
+}
+
+.walker-leg {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 5px;
+    height: 35px;
+
+    background: #020202;
+
+    transform-origin: top;
+}
+
+.walker-left {
+    left: 6px;
+    animation: leg1 1.2s infinite;
+}
+
+.walker-right {
+    right: 6px;
+    animation: leg2 1.2s infinite;
+}
+
+@keyframes walkerMove {
+    50% {
+        transform:
+            translateX(-50%)
+            translateY(-4px);
+    }
+}
+
+@keyframes leg1 {
+    50% {
+        transform: rotate(-25deg);
+    }
+}
+
+@keyframes leg2 {
+    50% {
+        transform: rotate(25deg);
+    }
+}
+
+/* =========================================================
+   REASON
+========================================================= */
+
+#scene9 {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.035),
+            transparent 50%
+        ),
+        #020203;
+}
+
+.reason-label {
+    font-size: 9px;
+
+    letter-spacing: 6px;
+
+    color: rgba(255,255,255,.3);
+
+    margin-bottom: 30px;
+}
+
+.reason {
+    font-family: Georgia, serif;
+
+    font-size: clamp(38px, 10vw, 95px);
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    margin: 0;
+}
+
+.reason em {
+    color: rgba(255,255,255,.55);
+}
+
+/* =========================================================
+   DAYS
+========================================================= */
+
+#scene10 {
+    background: #020203;
+}
+
+.days-title {
+    font-family: Georgia, serif;
+
+    font-size: clamp(35px, 9vw
