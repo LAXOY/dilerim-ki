@@ -2916,6 +2916,10 @@ img{
 
 </div>
 
+<audio id="arkaPlanMuzigi" loop preload="auto" hidden>
+  <source src="dolu-kadehi-ters-tut-dilerim-ki.mp3" type="audio/mpeg">
+</audio>
+
 
 <script>
 
@@ -3752,6 +3756,18 @@ sahneler.forEach(
 
   }
 );
+
+const arkaPlanMuzigi = document.getElementById("arkaPlanMuzigi");
+
+function muzigiBaslat() {
+    arkaPlanMuzigi.volume = 0.35;
+
+    arkaPlanMuzigi.play().catch((hata) => {
+        console.log("Müzik başlatılamadı:", hata);
+    });
+}
+
+document.addEventListener("pointerdown", muzigiBaslat, { once: true });
 
 
 /* =====================================================
