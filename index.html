@@ -3752,14 +3752,26 @@ sahneler.forEach(
 /* =====================================================
    DOSYA BİTİŞİ
    ===================================================== */
-const arkaPlanMuzigi = document.getElementById("arkaPlanMuzigi");
-
 document.addEventListener("pointerdown", function () {
+
+    const arkaPlanMuzigi =
+        document.getElementById("arkaPlanMuzigi");
+
+    if(!arkaPlanMuzigi){
+        return;
+    }
+
     arkaPlanMuzigi.volume = 0.35;
 
-    arkaPlanMuzigi.play().catch(function (hata) {
-        console.log("Müzik başlatılamadı:", hata);
+    arkaPlanMuzigi.play().catch(function(hata){
+
+        console.log(
+            "Müzik başlatılamadı:",
+            hata
+        );
+
     });
+
 });
 </script>
   
