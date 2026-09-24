@@ -3754,15 +3754,13 @@ sahneler.forEach(
    ===================================================== */
 const arkaPlanMuzigi = document.getElementById("arkaPlanMuzigi");
 
-function muzigiBaslat() {
-  arkaPlanMuzigi.volume = 0.35;
-  arkaPlanMuzigi.play().catch((hata) => {
-    console.log("Müzik başlatılamadı:", hata);
-  });
-}
+document.addEventListener("pointerdown", function () {
+    arkaPlanMuzigi.volume = 0.35;
 
-document.addEventListener("pointerdown", muzigiBaslat, { once: true });
-  
+    arkaPlanMuzigi.play().catch(function (hata) {
+        console.log("Müzik başlatılamadı:", hata);
+    });
+});
 </script>
   
 <audio id="arkaPlanMuzigi" loop preload="auto">
