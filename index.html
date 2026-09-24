@@ -3752,8 +3752,22 @@ sahneler.forEach(
 /* =====================================================
    DOSYA BİTİŞİ
    ===================================================== */
+const arkaPlanMuzigi = document.getElementById("arkaPlanMuzigi");
 
+function muzigiBaslat() {
+  arkaPlanMuzigi.volume = 0.35;
+  arkaPlanMuzigi.play().catch((hata) => {
+    console.log("Müzik başlatılamadı:", hata);
+  });
+}
+
+document.addEventListener("pointerdown", muzigiBaslat, { once: true });
+  
 </script>
-
+  
+<audio id="arkaPlanMuzigi" loop preload="auto">
+  <source src="dolu-kadehi-ters-tut-dilerim-ki.mp3" type="audio/mpeg">
+</audio>
+  
 </body>
 </html>
