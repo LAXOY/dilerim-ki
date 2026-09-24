@@ -328,32 +328,31 @@ img{
   opacity:10;
 }
 
-/* ... existing styles kept as-is ... */
 </style>
 
 </head>
 
 <body>
-
 <audio id="arkaPlanMuzigi" loop preload="auto">
   <source src="dolu-kadehi-ters-tut-dilerim-ki.mp3" type="audio/mpeg">
 </audio>
 
 <div id="uygulama">
-  <!-- mevcut içerik burada kalır -->
+  <div class="tanecik"></div>
+  <div id="sinematikGecis"></div>
+  <div id="sahneSayaci"><span id="mevcutSahne">01</span><span> / 22</span></div>
+  <div id="ilerleme"></div>
+  <div id="dokun">DOKUN</div>
 </div>
 
 <script>
-/* mevcut script burada kalır */
-
 const arkaPlanMuzigi = document.getElementById("arkaPlanMuzigi");
 
 function muzigiBaslat() {
-    arkaPlanMuzigi.volume = 0.35;
-
-    arkaPlanMuzigi.play().catch((hata) => {
-        console.log("Müzik başlatılamadı:", hata);
-    });
+  arkaPlanMuzigi.volume = 0.35;
+  arkaPlanMuzigi.play().catch((hata) => {
+    console.log("Müzik başlatılamadı:", hata);
+  });
 }
 
 document.addEventListener("pointerdown", muzigiBaslat, { once: true });
